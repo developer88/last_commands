@@ -1,0 +1,42 @@
+/*https://css-tricks.com/old-timey-terminal-styling/*/
+body {
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 100, 0, 0.85), black 120%
+  );
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  padding: 2rem;
+  color: white;
+  font: 1.3rem Inconsolata, monospace;
+  text-shadow: 0 0 5px #C8C8C8;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(black, 0.15),
+      rgba(black, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
+}
+::selection {
+  background: #0080FF;
+  text-shadow: none;
+}
+pre {
+  margin: 0;
+}
+a.squiffy-link {
+  color: #c8c8c8;
+}
+View Compiled 
+Resources1×0.5×0.25×Rerun
