@@ -35,6 +35,7 @@ body {
 pre {
   margin: 0;
 }
+a.squiffy-header-link,
 a.squiffy-link {
   color: #c8c8c8;
 }
