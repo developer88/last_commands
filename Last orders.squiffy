@@ -1,0 +1,583 @@
+@title Last orders
+
+@set timer_time=15
+
+**Status:** ❌ Error
+
+**Last access:** 11-11-1998
+
+**Last order:** Disable security system activation
+
+---
+
+|> [Retry the last order] | [[Restart]]
+
+---
+
+[Retry the last order]:
+
+**Status:** ❌ Error
+
+**Information:** 
+
+Nov 11. +3 UTC: Boxes are deactivated
+
+---
+
+[[Restart]]:
+
+@clear
+
+**Status:** ✅ Success
+
+**Information:** 
+
+Nov 11. +3 UTC: Warning: the system is overloaded
+
+Nov 11. +3 UTC: Unauthorised access found on 11-11-1988
+
+Nov 11. +3 UTC: from UserAgent: Jarvis, Mk. III. username: tony.stark@starkindustries.com
+
+...
+
+|> [[continue]]
+
+---
+
+[[continue]]:
+
+@clear
+
+**Status:** ℹ️ Protection is active
+
+**Information:** 
+
+Nov 11. +3 UTC: Entrance door is locked.
+
+Nov 11. +3 UTC: Protection is actived
+
+Nov 11. +3 UTC: The room will be filled with gas in 15 minutes
+
+---
+
+|> [[Debug]] | [[Information]]
+
+{current time}
+
+[[Information]]:
+
+@clear
+@dec timer_time
+
+**Help data was not found**
+
+**Debug comment:** 
+
+*UserAgent: Jarvis, Mk. III*
+
+*Once I brought some boxes. AFAIR - 5 items. Square ones. Each one is locked with secure code. This app can help me open them if i forget access codes.*
+
+---
+
+|> [[Debug]]
+
+{current time}
+
+[[current time]]:
+
+---
+
+**Time remaining**: {timer_time} minute(s) 
+
+---
+
+[[Debug]]:
+
+@clear
+
+**Make sure you have all required boxes in place!**
+
+@set not container1
+@set not container2
+@set not container3
+@set not container4
+@set not container5
+
+@set containers_enabled=0
+
+@set container1_count=4
+@set container2_count=3
+@set container3_count=1
+@set container4_count=3
+@set container5_count=1
+
+@dec timer_time
+
+---
+
+|> [[Unlock the boxes]]
+
+{current time}
+
+[[Unlock the boxes]]:
+
+@clear
+
+Please, select a box for unlocking:
+
+|> {if container1:Box 1}{else:[[Box 1]]} | {if container2:Box 2}{else:[[Box 2]]} | {if container3:Box 3}{else:[[Box 3]]} | {if container4:Box 4}{else:[[Box 4]]} | {if container5:Box 5}{else:[[Box 5]]} | [[Box 6]]
+
+{if containers_enabled=5:[[Deactivate security system]]}
+{if containers_enabled=3:{@dec timer_time}}
+
+{current time}
+
+[[Box 6]]:
+
+@clear
+
+**Status**: ℹ️ The box is deactivated
+
+**Last update**: 11-11-1988
+
+---
+
+|> [[Unlock the boxes]]
+
+{current time}
+
+[[Box 1]]:
+
+**Status**: The box is locked
+
+**Do you have this box?**
+
+---
+
+|> [Yes] | [No] |  [[Unlock the boxes]]
+
+{current time}
+
+[No]:
+
+**Status**: ❌ Error
+
+**Find the box and retry**
+
+---
+
+|> [[Box 1]] | [[Unlock the boxes]]
+
+{current time}
+
+[Yes]:
+
+**Status**: ℹ️ The box is locked
+
+**Security question**: How many types of gametes forms an individual with the AABb genotype?
+
+---
+
+|> [1] | [2] | [3] | [4] | [5] | [[Unlock the boxes]]
+
+{current time}
+
+[1]:
+
+**Status**: ❌ Error
+
+@dec container1_count
+
+**Available retries**: {container1_count}
+
+{current time}
+
+[2]:
+
+@set container1
+@inc containers_enabled
+@dec timer_time
+
+**Status**: The box is unlocked
+
+**Access code**: 4316
+
+---
+
+|> [[Unlock the boxes]]
+
+{current time}
+
+[3]:
+
+@dec timer_time
+
+**Status**: ❌ Error
+
+@dec container1_count
+
+**Available retries**: {container1_count}
+
+{current time}
+
+[4]:
+
+**Status**: ❌ Error
+
+@dec container1_count
+
+**Available retries**: {container1_count}
+
+{current time}
+
+[5]:
+
+**Status**: ❌ Error
+
+@dec container1_count
+
+**Available retries**: {container1_count}
+
+{current time}
+
+[[Box 2]]:
+
+@clear
+
+**Status**: ℹ️ The box is locked
+
+**Do you have the box?**
+
+---
+
+|> [Yes] | [No] |  [[Unlock the boxes]]
+
+{current time}
+
+[No]:
+
+**Status**: ❌ Error
+
+**Find the box and retry**
+
+---
+
+|> [[Box 2]] | [[Unlock the boxes]]
+
+{current time}
+
+[Yes]:
+
+**Status**: ℹ️ The box is locked
+
+**Security question**: Crossing on two pairs of signs is called
+
+---
+
+|> [trihybrid] | [digibridge] | [monohybrid] | [retrovirally] | [[Unlock the boxes]]
+
+{current time}
+
+[digibridge]:
+
+@dec timer_time
+
+@set container2
+@inc containers_enabled
+
+**Status**: ℹ️ The box is unlocked
+
+**Access code**: 5625
+
+---
+
+|> [[Unlock the boxes]]
+
+{current time}
+
+[trihybrid]:
+
+**Status**: ❌ Error
+
+@dec container2_count
+
+**Remaining retries**: {container2_count}
+
+{current time}
+
+[monohybrid]:
+
+**Status**: ❌ Error
+
+@dec container2_count
+
+**Remaining retries**: {container2_count}
+
+{current time}
+
+[retrovirally]:
+
+@dec timer_time
+
+**Status**: ❌ Error
+
+@dec container2_count
+
+**Remaining retries**: {container2_count}
+
+{current time}
+
+[[Box 3]]:
+
+@clear
+
+**Status**: ℹ️ The box is locked
+
+**Do you have the box?**
+
+---
+
+|> [Yes] | [No] |  [[Unlock the boxes]]
+
+{current time}
+
+[No]:
+
+**Status**: ❌ Error
+
+**Find the box and retry**
+
+---
+
+|> [[Box 3]] | [[Unlock the boxes]]
+
+{current time}
+
+[Yes]:
+
+**Status**: ℹ️ The box is locked
+
+**Security question**: The ratio of phenotypes in incomplete dominance is
+
+---
+
+|> [3 : 1] | [1 : 2 : 1] | [[Unlock the boxes]]
+
+{current time}
+
+[1 : 2 : 1]:
+
+@set container3
+@inc containers_enabled
+@dec timer_time
+
+**Status**: The box is unlocked
+
+**Access code**: 6581
+
+---
+
+|> [[Unlock the boxes]]
+
+{current time}
+
+[3 : 1]:
+
+**Status**: ❌ Error
+
+@dec container3_count
+@dec timer_time
+
+**Remaining retries**: {container3_count}
+
+{current time}
+
+[[Box 4]]:
+
+@clear
+
+**Status**: ℹ️ The box is locked
+
+**Do you have the box?**
+
+---
+
+|> [Yes] | [No] |  [[Unlock the boxes]]
+
+{current time}
+
+[No]:
+
+**Status**: ❌ Error
+
+**Find the box and retry**
+
+---
+
+|> [[Box 4]] | [[Unlock the boxes]]
+
+{current time}
+
+[Yes]:
+
+**Status**: ℹ️ The box is locked
+
+**Security question**: Who is the founder of genetics?
+
+---
+
+|> [G. Mendel] | [T. Morgan] | [R. Hooke] | [K. Ber] | [[Unlock the boxes]]
+
+{current time}
+
+[G. Mendel]:
+
+@set container4
+@inc containers_enabled
+@dec timer_time
+
+**Status**: ℹ️ The box is unlocked
+
+**Access code**: 7681
+
+---
+
+|> [[Unlock the boxes]]
+
+{current time}
+
+[T. Morgan]:
+
+**Status**: ❌ Error
+
+@dec container4_count
+
+**Remaining retries**: {container4_count}
+
+{current time}
+
+[R. Hooke]:
+
+**Status**: ❌ Error
+
+@dec container4_count
+
+**Remaining retries**: {container4_count}
+
+{current time}
+
+[K. Ber]:
+
+**Status**: ❌ Error
+
+@dec container4_count
+@dec timer_time
+
+**Remaining retries**: {container4_count}
+
+{current time}
+
+[[Box 5]]:
+
+@clear
+
+**Status**: ℹ️ The box is locked
+
+**Do you have the box?**
+
+---
+
+|> [Yes] | [No] |  [[Unlock the boxes]]
+
+{current time}
+
+[No]:
+
+**Status**: ❌ Error
+
+**Find the box and retry**
+
+---
+
+|> [[Box 5]] | [[Unlock the boxes]]
+
+{current time}
+
+[Yes]:
+
+**Status**: ℹ️ The box is locked
+
+**Security question**: Individuals that do not give cleavage are called
+
+---
+
+|> [homozygous] | [heterozygous] | [[Unlock the boxes]]
+
+{current time}
+
+[homozygous]:
+
+@set container5
+@inc containers_enabled
+@dec timer_time
+
+**Status**: ℹ️ The box is unlocked
+
+**Access code**: 1325
+
+---
+
+|> [[Unlock the boxes]]
+
+{current time}
+
+[heterozygous]:
+
+**Status**: ❌ Error
+
+@dec container5_count
+@dec timer_time
+
+**Remaining retries**: {container5_count}
+
+{current time}
+
+[[Deactivate security system]]:
+
+@clear
+@dec timer_time
+
+**Status**: ✅ All the boxes are unlocked
+
+The following actions will disable security system and unlock the entrance door. **Such actions cannot be undone!**
+
+**Continue?**
+
+---
+
+|> [[Yes]] | [Retry later]
+
+{current time}
+
+[Retry later]:
+
+**Status**: ❌ Unknown order 
+
+**Please retry**
+
+---
+
+|> [[Deactivate security system]]
+
+{current time}
+
+[[Yes]]:
+
+@clear
+
+**Status**: ✅ Security system is diactivated. The endtrance door is unlocked.
+
+Have a nice day and **Happy Birthday** 🎂
+
+{current time}
+
