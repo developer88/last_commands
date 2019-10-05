@@ -628,198 +628,197 @@
     squiffy.story.start = '_default';
     squiffy.story.sections = {
         '_default': {
-            'text': "<p><strong>Статус:</strong> Ошибка</p>\n<p><strong>Последний доступ:</strong> 11-11-1998</p>\n<p><strong>Последняя команда:</strong> Отмена</p>\n<p><strong>Меню</strong></p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"Перезапустить последнюю команду\" role=\"link\" tabindex=\"0\">Перезапустить последнюю команду</a> | <a class=\"squiffy-link link-section\" data-section=\"Перезагрузить систему\" role=\"link\" tabindex=\"0\">Перезагрузить систему</a></p>",
+            'text': "<p><strong>Status:</strong> ❌ Error</p>\n<p><strong>Last access:</strong> 11-11-1998</p>\n<p><strong>Last order:</strong> Disable security system activation</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"Retry the last order\" role=\"link\" tabindex=\"0\">Retry the last order</a> | <a class=\"squiffy-link link-section\" data-section=\"Restart\" role=\"link\" tabindex=\"0\">Restart</a></p>\n<hr>",
             'attributes': ["timer_time=15"],
             'passages': {
-                'Перезапустить последнюю команду': {
-                    'text': "<p><strong>Статус:</strong> Ошибка</p>\n<p><strong>Информация:</strong> </p>\n<p>Nov 11. +3 UTC:  Ключи не найдены</p>",
+                'Retry the last order': {
+                    'text': "<p><strong>Status:</strong> ❌ Error</p>\n<p><strong>Information:</strong> </p>\n<p>Nov 11. +3 UTC: Boxes are deactivated</p>\n<hr>",
                 },
             },
         },
-        'Перезагрузить систему': {
-            'text': "<p><strong>Статус:</strong> Успех</p>\n<p><strong>Информация:</strong> </p>\n<p>Nov 11. +3 UTC: Обнаружена перегрузка системы охлаждения</p>\n<p>Nov 11. +3 UTC: Обнаружен неавторизованный вход от 11-11-1988</p>\n<p>Nov 11. +3 UTC: с Jarvis, Mk. 3. username: tony.stark@gmail.com</p>\n<p>...</p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"продолжить\" role=\"link\" tabindex=\"0\">продолжить</a></p>",
-            'passages': {
-                'продолжить': {
-                    'text': "<p><strong>Статус:</strong> Защита активирована</p>\n<p><strong>Информация:</strong> </p>\n<p>Nov 11. +3 UTC: Активирована защита двери</p>\n<p>Nov 11. +3 UTC: Активирована система безопасности</p>\n<p>Nov 11. +3 UTC: Газ будет выпущен в комнату через 15 минут</p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Отладка\" role=\"link\" tabindex=\"0\">Отладка</a> | <a class=\"squiffy-link link-passage\" data-passage=\"Информация\" role=\"link\" tabindex=\"0\">Информация</a></p>",
-                },
-                'Информация': {
-                    'text': "<p><strong>Справка отсутствует!</strong></p>\n<p><strong>Комментарий:</strong> <em>Я как-то приносил 5 контейнеров. Квадратные такие. В каждом должен быть код. Надо бы успеть все контейнеры положить на место.</em> </p>\n<p><em>Ах да, чтобы вскрыть контейнер, нужно в программе запросить нужную функцию.</em></p>\n<p><a class=\"squiffy-link link-section\" data-section=\"Отладка\" role=\"link\" tabindex=\"0\">Отладка</a></p>",
-                },
-                '@1': {
-                    'text': "<p><strong>Статус</strong>: Защита активирована</p>\n<p><strong>Время до запуска команды:</strong> {timer_time} минут </p>",
-                    'attributes': ["timer_time-=1"],
-                },
-            },
-        },
-        'Отладка': {
-            'text': "<p>Для продолжения нужны коды доступа. Больше информации доступно в разделе справка: <a class=\"squiffy-link link-passage\" data-passage=\"Информация\" role=\"link\" tabindex=\"0\">Информация</a></p>\n<p>Убедитесь, что все контейнеры найдены.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-            'attributes': ["not container1", "not container2", "not container3", "not container4", "not container5", "containers_enabled=0", "container1_count=4", "container2_count=3", "container3_count=1", "container4_count=3", "container5_count=1"],
-            'passages': {
-            },
-        },
-        'Дешифровка контейнеров': {
+        'Restart': {
             'clear': true,
-            'text': "<p>Выберите контейнер для дешифровки:</p>\n<p>{if container1:Контейнер 1}{else:<a class=\"squiffy-link link-section\" data-section=\"Контейнер 1\" role=\"link\" tabindex=\"0\">Контейнер 1</a>} | {if container2:Контейнер 2}{else:<a class=\"squiffy-link link-section\" data-section=\"Контейнер 2\" role=\"link\" tabindex=\"0\">Контейнер 2</a>} | {if container3:Контейнер 3}{else:<a class=\"squiffy-link link-section\" data-section=\"Контейнер 3\" role=\"link\" tabindex=\"0\">Контейнер 3</a>} | {if container4:Контейнер 4}{else:<a class=\"squiffy-link link-section\" data-section=\"Контейнер 4\" role=\"link\" tabindex=\"0\">Контейнер 4</a>} | {if container5:Контейнер 5}{else:<a class=\"squiffy-link link-section\" data-section=\"Контейнер 5\" role=\"link\" tabindex=\"0\">Контейнер 5</a>} | <a class=\"squiffy-link link-passage\" data-passage=\"Контейнер 6\" role=\"link\" tabindex=\"0\">Контейнер 6</a></p>\n<p>{if containers_enabled=5:<a class=\"squiffy-link link-section\" data-section=\"Остановить программу\" role=\"link\" tabindex=\"0\">Остановить программу</a>}</p>",
+            'text': "<p><strong>Status:</strong> ✅ Success</p>\n<p><strong>Information:</strong> </p>\n<p>Nov 11. +3 UTC: Warning: the system is overloaded</p>\n<p>Nov 11. +3 UTC: Unauthorised access found on 11-11-1988</p>\n<p>Nov 11. +3 UTC: from UserAgent: Jarvis, Mk. III. username: tony.stark@starkindustries.com</p>\n<p>...</p>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"continue\" role=\"link\" tabindex=\"0\">continue</a></p>\n<hr>",
             'passages': {
-                '@1': {
-                    'text': "<p><strong>Статус</strong>: Защита активирована</p>\n<p><strong>Время до запуска команды:</strong> {timer_time} минут </p>",
-                    'attributes': ["timer_time-=1"],
-                },
-                'Контейнер 6': {
-                    'text': "<p><strong>Статус</strong>: Контейнер деактивирован</p>\n<p><strong>Дата последнего изменения состояния</strong>: 11-11-1988</p>",
-                },
             },
         },
-        'Контейнер 1': {
-            'text': "<p><strong>Статус</strong>: Контейнер заблокирован</p>\n<p><strong>У вас есть контейнер?</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"Да\" role=\"link\" tabindex=\"0\">Да</a> | <a class=\"squiffy-link link-passage\" data-passage=\"Нет\" role=\"link\" tabindex=\"0\">Нет</a> |  <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
+        'continue': {
+            'clear': true,
+            'text': "<p><strong>Status:</strong> ℹ️ Protection is active</p>\n<p><strong>Information:</strong> </p>\n<p>Nov 11. +3 UTC: Entrance door is locked.</p>\n<p>Nov 11. +3 UTC: Protection is actived</p>\n<p>Nov 11. +3 UTC: The room will be filled with gas in 15 minutes</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Debug\" role=\"link\" tabindex=\"0\">Debug</a> | <a class=\"squiffy-link link-section\" data-section=\"Information\" role=\"link\" tabindex=\"0\">Information</a></p>\n<p>{current time}</p>",
+            'passages': {
+            },
+        },
+        'Information': {
+            'clear': true,
+            'text': "<p><strong>Help data was not found</strong></p>\n<p><strong>Debug comment:</strong> </p>\n<p><em>UserAgent: Jarvis, Mk. III</em></p>\n<p><em>Once I brought some boxes. AFAIR - 5 items. Square ones. Each one is locked with secure code. This app can help me open them if i forget access codes.</em></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Debug\" role=\"link\" tabindex=\"0\">Debug</a></p>\n<p>{current time}</p>",
+            'attributes': ["timer_time-=1"],
+            'passages': {
+            },
+        },
+        'current time': {
+            'text': "<hr>\n<p><strong>Time remaining</strong>: {timer_time} minute(s) </p>\n<hr>",
+            'passages': {
+            },
+        },
+        'Debug': {
+            'clear': true,
+            'text': "<p><strong>Make sure you have all required boxes in place!</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+            'attributes': ["not container1", "not container2", "not container3", "not container4", "not container5", "containers_enabled=0", "container1_count=4", "container2_count=3", "container3_count=1", "container4_count=3", "container5_count=1", "timer_time-=1"],
+            'passages': {
+            },
+        },
+        'Unlock the boxes': {
+            'clear': true,
+            'text': "<p>Please, select a box for unlocking:</p>\n<p>|&gt; {if container1:Box 1}{else:<a class=\"squiffy-link link-section\" data-section=\"Box 1\" role=\"link\" tabindex=\"0\">Box 1</a>} | {if container2:Box 2}{else:<a class=\"squiffy-link link-section\" data-section=\"Box 2\" role=\"link\" tabindex=\"0\">Box 2</a>} | {if container3:Box 3}{else:<a class=\"squiffy-link link-section\" data-section=\"Box 3\" role=\"link\" tabindex=\"0\">Box 3</a>} | {if container4:Box 4}{else:<a class=\"squiffy-link link-section\" data-section=\"Box 4\" role=\"link\" tabindex=\"0\">Box 4</a>} | {if container5:Box 5}{else:<a class=\"squiffy-link link-section\" data-section=\"Box 5\" role=\"link\" tabindex=\"0\">Box 5</a>} | <a class=\"squiffy-link link-section\" data-section=\"Box 6\" role=\"link\" tabindex=\"0\">Box 6</a></p>\n<p>{if containers_enabled=5:<a class=\"squiffy-link link-section\" data-section=\"Deactivate security system\" role=\"link\" tabindex=\"0\">Deactivate security system</a>}\n{if containers_enabled=3:{@dec timer_time}}</p>\n<p>{current time}</p>",
+            'passages': {
+            },
+        },
+        'Box 6': {
+            'clear': true,
+            'text': "<p><strong>Status</strong>: ℹ️ The box is deactivated</p>\n<p><strong>Last update</strong>: 11-11-1988</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+            'passages': {
+            },
+        },
+        'Box 1': {
+            'text': "<p><strong>Status</strong>: The box is locked</p>\n<p><strong>Do you have this box?</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"Yes\" role=\"link\" tabindex=\"0\">Yes</a> | <a class=\"squiffy-link link-passage\" data-passage=\"No\" role=\"link\" tabindex=\"0\">No</a> |  <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
             'passages': {
                 '1': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container1_count}</p>",
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Available retries</strong>: {container1_count}</p>\n<p>{current time}</p>",
                     'attributes': ["container1_count-=1"],
                 },
                 '2': {
-                    'text': "<p><strong>Статус</strong>: Контейнер разблокирован</p>\n<p><strong>Код доступа</strong>: 4316</p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-                    'attributes': ["container1", "containers_enabled+=1"],
+                    'text': "<p><strong>Status</strong>: The box is unlocked</p>\n<p><strong>Access code</strong>: 4316</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+                    'attributes': ["container1", "containers_enabled+=1", "timer_time-=1"],
                 },
                 '3': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container1_count}</p>",
-                    'attributes': ["container1_count-=1"],
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Available retries</strong>: {container1_count}</p>\n<p>{current time}</p>",
+                    'attributes': ["timer_time-=1", "container1_count-=1"],
                 },
                 '4': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container1_count}</p>",
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Available retries</strong>: {container1_count}</p>\n<p>{current time}</p>",
                     'attributes': ["container1_count-=1"],
                 },
                 '5': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container1_count}</p>",
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Available retries</strong>: {container1_count}</p>\n<p>{current time}</p>",
                     'attributes': ["container1_count-=1"],
                 },
-                'Нет': {
-                    'text': "<p><strong>Статус</strong>: Продолжение невозможно</p>\n<p><strong>Найдите контейнер и повторите попытку</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Контейнер 1\" role=\"link\" tabindex=\"0\">Контейнер 1</a> | <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
+                'No': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Find the box and retry</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Box 1\" role=\"link\" tabindex=\"0\">Box 1</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
                 },
-                'Да': {
-                    'text': "<p><strong>Статус</strong>: Разблокировка контейнера</p>\n<p><strong>Контрольный вопрос</strong>: Сколько типов гамет образует особь с генотипом ААВв?</p>\n<hr>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"1\" role=\"link\" tabindex=\"0\">1</a> | <a class=\"squiffy-link link-passage\" data-passage=\"2\" role=\"link\" tabindex=\"0\">2</a> | <a class=\"squiffy-link link-passage\" data-passage=\"3\" role=\"link\" tabindex=\"0\">3</a> | <a class=\"squiffy-link link-passage\" data-passage=\"4\" role=\"link\" tabindex=\"0\">4</a> | <a class=\"squiffy-link link-passage\" data-passage=\"5\" role=\"link\" tabindex=\"0\">5</a> | <a class=\"squiffy-link link-section\" data-section=\"��ешифровка контейнеров\" role=\"link\" tabindex=\"0\">��ешифровка контейнеров</a></p>",
-                },
-                '@1': {
-                    'text': "<p><strong>Статус</strong>: Защита активирована</p>\n<p><strong>Время до запуска команды:</strong> {timer_time} минут </p>",
-                    'attributes': ["timer_time-=1"],
+                'Yes': {
+                    'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Security question</strong>: How many types of gametes forms an individual with the AABb genotype?</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"1\" role=\"link\" tabindex=\"0\">1</a> | <a class=\"squiffy-link link-passage\" data-passage=\"2\" role=\"link\" tabindex=\"0\">2</a> | <a class=\"squiffy-link link-passage\" data-passage=\"3\" role=\"link\" tabindex=\"0\">3</a> | <a class=\"squiffy-link link-passage\" data-passage=\"4\" role=\"link\" tabindex=\"0\">4</a> | <a class=\"squiffy-link link-passage\" data-passage=\"5\" role=\"link\" tabindex=\"0\">5</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
                 },
             },
         },
-        'Контейнер 2': {
-            'text': "<p><strong>Статус</strong>: Контейнер заблокирован</p>\n<p><strong>У вас есть контейнер?</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"Да\" role=\"link\" tabindex=\"0\">Да</a> | <a class=\"squiffy-link link-passage\" data-passage=\"Нет\" role=\"link\" tabindex=\"0\">Нет</a> |  <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
+        'Box 2': {
+            'clear': true,
+            'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Do you have the box?</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"Yes\" role=\"link\" tabindex=\"0\">Yes</a> | <a class=\"squiffy-link link-passage\" data-passage=\"No\" role=\"link\" tabindex=\"0\">No</a> |  <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
             'passages': {
-                'Нет': {
-                    'text': "<p><strong>Статус</strong>: Продолжение невозможно</p>\n<p><strong>Найдите контейнер и повторите попытку</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Контейнер 2\" role=\"link\" tabindex=\"0\">Контейнер 2</a> | <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
+                'No': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Find the box and retry</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Box 2\" role=\"link\" tabindex=\"0\">Box 2</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
                 },
-                'Да': {
-                    'text': "<p><strong>Статус</strong>: Разблокировка контейнера</p>\n<p><strong>Контрольный вопрос</strong>: Скрещивание по двум парам признаков называется</p>\n<hr>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"тригибридным\" role=\"link\" tabindex=\"0\">тригибридным</a> | <a class=\"squiffy-link link-passage\" data-passage=\"дигибридным\" role=\"link\" tabindex=\"0\">дигибридным</a> | <a class=\"squiffy-link link-passage\" data-passage=\"моногибридным\" role=\"link\" tabindex=\"0\">моногибридным</a> | <a class=\"squiffy-link link-passage\" data-passage=\"тетрогибридным\" role=\"link\" tabindex=\"0\">тетрогибридным</a> | <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
+                'Yes': {
+                    'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Security question</strong>: Crossing on two pairs of signs is called</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"trihybrid\" role=\"link\" tabindex=\"0\">trihybrid</a> | <a class=\"squiffy-link link-passage\" data-passage=\"digibridge\" role=\"link\" tabindex=\"0\">digibridge</a> | <a class=\"squiffy-link link-passage\" data-passage=\"monohybrid\" role=\"link\" tabindex=\"0\">monohybrid</a> | <a class=\"squiffy-link link-passage\" data-passage=\"retrovirally\" role=\"link\" tabindex=\"0\">retrovirally</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
                 },
-                'дигибридным': {
-                    'text': "<p><strong>Статус</strong>: Контейнер разблокирован</p>\n<p><strong>Код доступа</strong>: 5625</p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-                    'attributes': ["container2", "containers_enabled+=1"],
+                'digibridge': {
+                    'text': "<p><strong>Status</strong>: ℹ️ The box is unlocked</p>\n<p><strong>Access code</strong>: 5625</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+                    'attributes': ["timer_time-=1", "container2", "containers_enabled+=1"],
                 },
-                '@2': {
-                    'text': "<p><strong>Статус</strong>: Защита активирована</p>\n<p><strong>Время до запуска команды:</strong> {timer_time} минут </p>",
-                    'attributes': ["timer_time-=1"],
-                },
-                'тригибридным': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container2_count}</p>",
+                'trihybrid': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Remaining retries</strong>: {container2_count}</p>\n<p>{current time}</p>",
                     'attributes': ["container2_count-=1"],
                 },
-                'моногибридным': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container2_count}</p>",
+                'monohybrid': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Remaining retries</strong>: {container2_count}</p>\n<p>{current time}</p>",
                     'attributes': ["container2_count-=1"],
                 },
-                'тетрогибридным': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container2_count}</p>",
-                    'attributes': ["container2_count-=1"],
+                'retrovirally': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Remaining retries</strong>: {container2_count}</p>\n<p>{current time}</p>",
+                    'attributes': ["timer_time-=1", "container2_count-=1"],
                 },
             },
         },
-        'Контейнер 3': {
-            'text': "<p><strong>Статус</strong>: Контейнер заблокирован</p>\n<p><strong>У вас есть контейнер?</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"Да\" role=\"link\" tabindex=\"0\">Да</a> | <a class=\"squiffy-link link-passage\" data-passage=\"Нет\" role=\"link\" tabindex=\"0\">Нет</a> |  <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
+        'Box 3': {
+            'clear': true,
+            'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Do you have the box?</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"Yes\" role=\"link\" tabindex=\"0\">Yes</a> | <a class=\"squiffy-link link-passage\" data-passage=\"No\" role=\"link\" tabindex=\"0\">No</a> |  <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
             'passages': {
-                'Нет': {
-                    'text': "<p><strong>Статус</strong>: Продолжение невозможно</p>\n<p><strong>Найдите контейнер и повторите попытку</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Контейнер 3\" role=\"link\" tabindex=\"0\">Контейнер 3</a> | <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
+                'No': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Find the box and retry</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Box 3\" role=\"link\" tabindex=\"0\">Box 3</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
                 },
-                'Да': {
-                    'text': "<p><strong>Статус</strong>: Разблокировка контейнера</p>\n<p><strong>Контрольный вопрос</strong>: Соотношение фенотипов при неполном доминировании</p>\n<hr>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"3 : 1\" role=\"link\" tabindex=\"0\">3 : 1</a> | <a class=\"squiffy-link link-passage\" data-passage=\"1 : 2 : 1\" role=\"link\" tabindex=\"0\">1 : 2 : 1</a> | <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
+                'Yes': {
+                    'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Security question</strong>: The ratio of phenotypes in incomplete dominance is</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"3 : 1\" role=\"link\" tabindex=\"0\">3 : 1</a> | <a class=\"squiffy-link link-passage\" data-passage=\"1 : 2 : 1\" role=\"link\" tabindex=\"0\">1 : 2 : 1</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
                 },
                 '1 : 2 : 1': {
-                    'text': "<p><strong>Статус</strong>: Контейнер разблокирован</p>\n<p><strong>Код доступа</strong>: 6581</p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-                    'attributes': ["container3", "containers_enabled+=1"],
+                    'text': "<p><strong>Status</strong>: The box is unlocked</p>\n<p><strong>Access code</strong>: 6581</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+                    'attributes': ["container3", "containers_enabled+=1", "timer_time-=1"],
                 },
                 '3 : 1': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container3_count}</p>",
-                    'attributes': ["container3_count-=1"],
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Remaining retries</strong>: {container3_count}</p>\n<p>{current time}</p>",
+                    'attributes': ["container3_count-=1", "timer_time-=1"],
                 },
             },
         },
-        'Контейнер 4': {
-            'text': "<p><strong>Статус</strong>: Контейнер заблокирован</p>\n<p><strong>У вас есть контейнер?</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"Да\" role=\"link\" tabindex=\"0\">Да</a> | <a class=\"squiffy-link link-passage\" data-passage=\"Нет\" role=\"link\" tabindex=\"0\">Нет</a> |  <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-            'passages': {
-                'Нет': {
-                    'text': "<p><strong>Статус</strong>: Продолжение невозможно</p>\n<p><strong>Найдите контейнер и повторите попытку</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Контейнер 4\" role=\"link\" tabindex=\"0\">Контейнер 4</a> | <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-                },
-                'Да': {
-                    'text': "<p><strong>Статус</strong>: Разблокировка контейнера</p>\n<p><strong>Контрольный вопрос</strong>: Кто является основателем генетики?</p>\n<hr>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"Г. Мендель\" role=\"link\" tabindex=\"0\">Г. Мендель</a> | <a class=\"squiffy-link link-passage\" data-passage=\"Т. Морган\" role=\"link\" tabindex=\"0\">Т. Морган</a> | <a class=\"squiffy-link link-passage\" data-passage=\"Р. Гук\" role=\"link\" tabindex=\"0\">Р. Гук</a> | <a class=\"squiffy-link link-passage\" data-passage=\"К. Бер\" role=\"link\" tabindex=\"0\">К. Бер</a> | <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-                },
-                'Г. Мендель': {
-                    'text': "<p><strong>Статус</strong>: Контейнер разблокирован</p>\n<p><strong>Код доступа</strong>: 7681</p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-                    'attributes': ["container4", "containers_enabled+=1"],
-                },
-                'Т. Морган': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container4_count}</p>",
-                    'attributes': ["container4_count-=1"],
-                },
-                'Р. Гук': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container4_count}</p>",
-                    'attributes': ["container4_count-=1"],
-                },
-                'К. Бер': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container4_count}</p>",
-                    'attributes': ["container4_count-=1"],
-                },
-                '@2': {
-                    'text': "<p><strong>Статус</strong>: Защита активирована</p>\n<p><strong>Время до запуска команды:</strong> {timer_time} минут </p>",
-                    'attributes': ["timer_time-=1"],
-                },
-            },
-        },
-        'Контейнер 5': {
-            'text': "<p><strong>Статус</strong>: Контейнер заблокирован</p>\n<p><strong>У вас есть контейнер?</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"Да\" role=\"link\" tabindex=\"0\">Да</a> | <a class=\"squiffy-link link-passage\" data-passage=\"Нет\" role=\"link\" tabindex=\"0\">Нет</a> |  <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-            'passages': {
-                'Нет': {
-                    'text': "<p><strong>Статус</strong>: Продолжение невозможно</p>\n<p><strong>Найдите контейнер и повторите попытку</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Контейнер 5\" role=\"link\" tabindex=\"0\">Контейнер 5</a> | <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-                },
-                '@1': {
-                    'text': "<p><strong>Статус</strong>: Защита активирована</p>\n<p><strong>Время до запуска команды:</strong> {timer_time} минут </p>",
-                    'attributes': ["timer_time-=1"],
-                },
-                'Да': {
-                    'text': "<p><strong>Статус</strong>: Разблокировка контейнера</p>\n<p><strong>Контрольный вопрос</strong>: Особи, не дающие расщепления</p>\n<hr>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"гомозиготные\" role=\"link\" tabindex=\"0\">гомозиготные</a> | <a class=\"squiffy-link link-passage\" data-passage=\"гетерозиготные\" role=\"link\" tabindex=\"0\">гетерозиготные</a> | <a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-                },
-                'гомозиготные': {
-                    'text': "<p><strong>Статус</strong>: Контейнер разблокирован</p>\n<p><strong>Код доступа</strong>: 1325</p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Дешифровка контейнеров\" role=\"link\" tabindex=\"0\">Дешифровка контейнеров</a></p>",
-                    'attributes': ["container5", "containers_enabled+=1"],
-                },
-                'гетерозиготные': {
-                    'text': "<p><strong>Статус</strong>: Ошибка</p>\n<p><strong>Количество попыток</strong>: {container5_count}</p>",
-                    'attributes': ["container5_count-=1"],
-                },
-            },
-        },
-        'Остановить программу': {
-            'text': "<p><strong>Статус</strong>: Все активные контейнеры разблокированы</p>\n<p>Дальнейшие действия приведут к остановке системы защиты, разблокировки двери.</p>\n<p><strong>Продолжить?</strong> (Данное действие отменить нельзя)</p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Да\" role=\"link\" tabindex=\"0\">Да</a> | <a class=\"squiffy-link link-passage\" data-passage=\"Отложить выполнение\" role=\"link\" tabindex=\"0\">Отложить выполнение</a></p>",
-            'passages': {
-                'Отложить выполнение': {
-                    'text': "<p><strong>Статус</strong>: Неизвестные вводные данные </p>\n<p><strong>Пожалуйста, повторите попытку</strong></p>\n<hr>\n<p><a class=\"squiffy-link link-section\" data-section=\"Остановить программу\" role=\"link\" tabindex=\"0\">Остановить программу</a></p>",
-                },
-            },
-        },
-        'Да': {
+        'Box 4': {
             'clear': true,
-            'text': "<p><strong>Статус</strong>: Система безопастности отключена. Дверь разблокирована.</p>\n<p>Хорошего дня и с <strong>днем Рождения</strong></p>",
+            'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Do you have the box?</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"Yes\" role=\"link\" tabindex=\"0\">Yes</a> | <a class=\"squiffy-link link-passage\" data-passage=\"No\" role=\"link\" tabindex=\"0\">No</a> |  <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+            'passages': {
+                'No': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Find the box and retry</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Box 4\" role=\"link\" tabindex=\"0\">Box 4</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+                },
+                'Yes': {
+                    'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Security question</strong>: Who is the founder of genetics?</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"G. Mendel\" role=\"link\" tabindex=\"0\">G. Mendel</a> | <a class=\"squiffy-link link-passage\" data-passage=\"T. Morgan\" role=\"link\" tabindex=\"0\">T. Morgan</a> | <a class=\"squiffy-link link-passage\" data-passage=\"R. Hooke\" role=\"link\" tabindex=\"0\">R. Hooke</a> | <a class=\"squiffy-link link-passage\" data-passage=\"K. Ber\" role=\"link\" tabindex=\"0\">K. Ber</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+                },
+                'G. Mendel': {
+                    'text': "<p><strong>Status</strong>: ℹ️ The box is unlocked</p>\n<p><strong>Access code</strong>: 7681</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+                    'attributes': ["container4", "containers_enabled+=1", "timer_time-=1"],
+                },
+                'T. Morgan': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Remaining retries</strong>: {container4_count}</p>\n<p>{current time}</p>",
+                    'attributes': ["container4_count-=1"],
+                },
+                'R. Hooke': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Remaining retries</strong>: {container4_count}</p>\n<p>{current time}</p>",
+                    'attributes': ["container4_count-=1"],
+                },
+                'K. Ber': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Remaining retries</strong>: {container4_count}</p>\n<p>{current time}</p>",
+                    'attributes': ["container4_count-=1", "timer_time-=1"],
+                },
+            },
+        },
+        'Box 5': {
+            'clear': true,
+            'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Do you have the box?</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"Yes\" role=\"link\" tabindex=\"0\">Yes</a> | <a class=\"squiffy-link link-passage\" data-passage=\"No\" role=\"link\" tabindex=\"0\">No</a> |  <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+            'passages': {
+                'No': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Find the box and retry</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Box 5\" role=\"link\" tabindex=\"0\">Box 5</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+                },
+                'Yes': {
+                    'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Security question</strong>: Individuals that do not give cleavage are called</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"homozygous\" role=\"link\" tabindex=\"0\">homozygous</a> | <a class=\"squiffy-link link-passage\" data-passage=\"heterozygous\" role=\"link\" tabindex=\"0\">heterozygous</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+                },
+                'homozygous': {
+                    'text': "<p><strong>Status</strong>: ℹ️ The box is unlocked</p>\n<p><strong>Access code</strong>: 1325</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+                    'attributes': ["container5", "containers_enabled+=1", "timer_time-=1"],
+                },
+                'heterozygous': {
+                    'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Remaining retries</strong>: {container5_count}</p>\n<p>{current time}</p>",
+                    'attributes': ["container5_count-=1", "timer_time-=1"],
+                },
+            },
+        },
+        'Deactivate security system': {
+            'clear': true,
+            'text': "<p><strong>Status</strong>: ✅ All the boxes are unlocked</p>\n<p>The following actions will disable security system and unlock the entrance door. <strong>Such actions cannot be undone!</strong></p>\n<p><strong>Continue?</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Yes\" role=\"link\" tabindex=\"0\">Yes</a> | <a class=\"squiffy-link link-passage\" data-passage=\"Retry later\" role=\"link\" tabindex=\"0\">Retry later</a></p>\n<p>{current time}</p>",
+            'attributes': ["timer_time-=1"],
+            'passages': {
+                'Retry later': {
+                    'text': "<p><strong>Status</strong>: ❌ Unknown order </p>\n<p><strong>Please retry</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Deactivate security system\" role=\"link\" tabindex=\"0\">Deactivate security system</a></p>\n<p>{current time}</p>",
+                },
+            },
+        },
+        'Yes': {
+            'clear': true,
+            'text': "<p><strong>Status</strong>: ✅ Security system is diactivated. The endtrance door is unlocked.</p>\n<p>Have a nice day and <strong>Happy Birthday</strong> 🎂</p>\n<p>{current time}</p>",
             'passages': {
             },
         },
