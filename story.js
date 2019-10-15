@@ -626,7 +626,6 @@ var set = squiffy.set;
 
 
 squiffy.story.start = '_default';
-squiffy.story.id = '4a4cd9352c';
 squiffy.story.sections = {
 	'_default': {
 		'text': "<p><strong>Status:</strong> ❌ Error</p>\n<p><strong>Last access:</strong> 11-11-1998</p>\n<p><strong>Last order:</strong> Disable security system activation</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"Retry the last order\" role=\"link\" tabindex=\"0\">Retry the last order</a> | <a class=\"squiffy-link link-section\" data-section=\"Restart\" role=\"link\" tabindex=\"0\">Restart</a></p>\n<hr>",
@@ -688,7 +687,7 @@ squiffy.story.sections = {
 				'attributes': ["container1_count-=1"],
 			},
 			'2': {
-				'text': "<p><strong>Status</strong>: The box is unlocked</p>\n<p><strong>Access code</strong>: 4316</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+				'text': "<p><strong>Status</strong>: The box is unlocked</p>\n<p><strong>Access code</strong>: 431</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
 				'attributes': ["container1","containers_enabled+=1","timer_time-=1"],
 			},
 			'3': {
@@ -719,10 +718,10 @@ squiffy.story.sections = {
 				'text': "<p><strong>Status</strong>: ❌ Error</p>\n<p><strong>Find the box and retry</strong></p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Box 2\" role=\"link\" tabindex=\"0\">Box 2</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
 			},
 			'Yes': {
-				'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Security question</strong>: Crossing on two pairs of signs is called</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"trihybrid\" role=\"link\" tabindex=\"0\">trihybrid</a> | <a class=\"squiffy-link link-passage\" data-passage=\"digibridge\" role=\"link\" tabindex=\"0\">digibridge</a> | <a class=\"squiffy-link link-passage\" data-passage=\"monohybrid\" role=\"link\" tabindex=\"0\">monohybrid</a> | <a class=\"squiffy-link link-passage\" data-passage=\"retrovirally\" role=\"link\" tabindex=\"0\">retrovirally</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+				'text': "<p><strong>Status</strong>: ���️ The box is locked</p>\n<p><strong>Security question</strong>: Crossing on two pairs of signs is called</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"trihybrid\" role=\"link\" tabindex=\"0\">trihybrid</a> | <a class=\"squiffy-link link-passage\" data-passage=\"digibridge\" role=\"link\" tabindex=\"0\">digibridge</a> | <a class=\"squiffy-link link-passage\" data-passage=\"monohybrid\" role=\"link\" tabindex=\"0\">monohybrid</a> | <a class=\"squiffy-link link-passage\" data-passage=\"retrovirally\" role=\"link\" tabindex=\"0\">retrovirally</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
 			},
 			'digibridge': {
-				'text': "<p><strong>Status</strong>: ℹ️ The box is unlocked</p>\n<p><strong>Access code</strong>: 5625</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+				'text': "<p><strong>Status</strong>: ℹ️ The box is unlocked</p>\n<p><strong>Access code</strong>: 562</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
 				'attributes': ["timer_time-=1","container2","containers_enabled+=1"],
 			},
 			'trihybrid': {
@@ -750,7 +749,7 @@ squiffy.story.sections = {
 				'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Security question</strong>: The ratio of phenotypes in incomplete dominance is</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"3 : 1\" role=\"link\" tabindex=\"0\">3 : 1</a> | <a class=\"squiffy-link link-passage\" data-passage=\"1 : 2 : 1\" role=\"link\" tabindex=\"0\">1 : 2 : 1</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
 			},
 			'1 : 2 : 1': {
-				'text': "<p><strong>Status</strong>: The box is unlocked</p>\n<p><strong>Access code</strong>: 6581</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+				'text': "<p><strong>Status</strong>: The box is unlocked</p>\n<p><strong>Access code</strong>: 658</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
 				'attributes': ["container3","containers_enabled+=1","timer_time-=1"],
 			},
 			'3 : 1': {
@@ -770,7 +769,7 @@ squiffy.story.sections = {
 				'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Security question</strong>: Who is the founder of genetics?</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"G. Mendel\" role=\"link\" tabindex=\"0\">G. Mendel</a> | <a class=\"squiffy-link link-passage\" data-passage=\"T. Morgan\" role=\"link\" tabindex=\"0\">T. Morgan</a> | <a class=\"squiffy-link link-passage\" data-passage=\"R. Hooke\" role=\"link\" tabindex=\"0\">R. Hooke</a> | <a class=\"squiffy-link link-passage\" data-passage=\"K. Ber\" role=\"link\" tabindex=\"0\">K. Ber</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
 			},
 			'G. Mendel': {
-				'text': "<p><strong>Status</strong>: ℹ️ The box is unlocked</p>\n<p><strong>Access code</strong>: 7681</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+				'text': "<p><strong>Status</strong>: ℹ️ The box is unlocked</p>\n<p><strong>Access code</strong>: 768</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
 				'attributes': ["container4","containers_enabled+=1","timer_time-=1"],
 			},
 			'T. Morgan': {
@@ -798,7 +797,7 @@ squiffy.story.sections = {
 				'text': "<p><strong>Status</strong>: ℹ️ The box is locked</p>\n<p><strong>Security question</strong>: Individuals that do not give cleavage are called</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-passage\" data-passage=\"homozygous\" role=\"link\" tabindex=\"0\">homozygous</a> | <a class=\"squiffy-link link-passage\" data-passage=\"heterozygous\" role=\"link\" tabindex=\"0\">heterozygous</a> | <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
 			},
 			'homozygous': {
-				'text': "<p><strong>Status</strong>: ℹ️ The box is unlocked</p>\n<p><strong>Access code</strong>: 1325</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
+				'text': "<p><strong>Status</strong>: ℹ️ The box is unlocked</p>\n<p><strong>Access code</strong>: 132</p>\n<hr>\n<p>|&gt; <a class=\"squiffy-link link-section\" data-section=\"Unlock the boxes\" role=\"link\" tabindex=\"0\">Unlock the boxes</a></p>\n<p>{current time}</p>",
 				'attributes': ["container5","containers_enabled+=1","timer_time-=1"],
 			},
 			'heterozygous': {
